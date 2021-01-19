@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report 
+            id="report_my_report_name"
+            model="my.model.name"
+            report_type="qweb-html"
+            string="My Report"
+            print_report_name="'Report of - %s - %s' %(object.code, object.name)"
+            name="app_name.report_template_my_report_name"
+            file="app_name.report_template_my_report_name"
+            paperformat="app_name.custom_paperformat_portrait"
+            attachment_use="False"
+        />
+
+        <template id="report_template_my_report_name">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        
+                        <div class="oe_structure"/>
+                        
+
+                        <!-- Report Title -->
+                        <div class="row" style="margin-bottom: 30px !important; text-decoration: underline;">
+                            <div class="col-xs-12 col-md-12">
+                                <h2 class="text-center">Report of My Model Name</h2>
+                            </div>
+                        </div>
+
+                        
+                        <!-- Report Header -->
+                        <div class="row" style="margin-bottom: 30px !important;">
+                            <div class="col-xs-12 col-md-12">
+                                <p>Code: <b><span t-if="docs[0].code" t-esc="docs[0].code"/></b></p>
+                                <p>Name: <b><span t-if="docs[0].name" t-esc="docs[0].name"/></b></p>
+                            </div>
+                            <div class="col-xs-12 col-md-12">
+                                <p>Amount: <b><span t-if="docs[0].amount" t-esc="docs[0].amount" t-options="{'widget': 'monetary', 'display_currency': docs[0].currency_id}"/></b></p>
+                                <p>Year: <b><span t-if="docs[0].year" t-esc="docs[0].year"/></b></p>
+                                <p>Birthday: <b><span t-if="docs[0].birthday" t-esc="docs[0].birthday" t-field-options='{"format": "dd/MM/yyyy"}'/></b></p>
+                            </div>
+                        </div>
+
+                        
+                        <!-- Report Body -->
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Company</th>
+                                    <th class="text-right">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="docs" t-as="line">
+                                    <td>
+                                        <span t-if="docs[0].name" t-field="line.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-if="docs[0].company_id" t-field="line.company_id"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-if="docs[0].amount" t-field="line.amount" t-options="{'widget': 'monetary', 'display_currency': line.currency_id}"/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black">
+                                    <td colspan="2">
+                                        <b>Total</b>
+                                    </td>
+                                    <td class="text-right">
+                                        <b><span t-esc="sum(line.amount for line in docs)" t-options="{'widget': 'monetary', 'display_currency': docs[0].currency_id}"/></b>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        
+                        <div class="oe_structure"/>
+
+                    </div>
+                </t>
+            </t>
+        </template>
+        
+    </data>
+</odoo>
+
