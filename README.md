@@ -1,5 +1,5 @@
 # Odoo
-Odoo is a suite of business management software tools including CRM, e-commerce, billing, accounting, manufacturing, warehouse, project management, and inventory management to name a few. The Community version is a libre software, licensed under the GNU LGPLv3. ![More...](https://odoo.com/)
+Odoo is a suite of business management software tools including CRM, e-commerce, billing, accounting, manufacturing, warehouse, project management, and inventory management to name a few. The Community version is a libre software, licensed under the GNU LGPLv3. [More...](https://odoo.com/)
 
 Programming languages: Python, JavaScript, XML.
 
@@ -48,4 +48,4 @@ app_name/
 
 ------------------------------------------------------------------------------
 
-###### Note: You can download the app and modify as you want. It's free.
+###### Note: Version wise branching availabe. You can download the app and modify as you want. It's free.
