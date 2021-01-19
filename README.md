@@ -44,4 +44,10 @@ app_name/
 └── __manifest__.py
 ```
 
+------------------------------------------------------------------------------
+
+ Contributor(s)          : **[Jeshad Khan](http://jeshadkhan.com)**
+
+------------------------------------------------------------------------------
+
 ###### Note: You can download the app and modify as you want. It's free.
