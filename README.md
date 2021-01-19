@@ -44,4 +44,4 @@ app_name/
 └── __manifest__.py
 ```
 
-###### Note: You can download the app and modify as you want. Its free.
+###### Note: You can download the app and modify as you want. It's free.
