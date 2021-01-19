@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_for_my_model_name,app_name,model_my_model_name,base.group_user,1,1,1,1
+access_for_my_model_name_line,app_name,model_my_model_name_line,base.group_user,1,1,1,1
+access_for_my_model_name_wizard,app_name,model_my_model_name_wizard,base.group_user,1,1,1,1

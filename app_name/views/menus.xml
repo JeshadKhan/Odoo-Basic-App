@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Main Menu -->
+        <menuitem name="App Name"
+            id="menu_action_app_name"
+            web_icon="app_name,static/description/icon.png"
+            sequence="1" />
+        
+
+        
+        <!-- Menu -->
+        <menuitem name="Menu"
+            id="menu_action_menu"
+            parent="app_name.menu_action_app_name"
+            sequence="1" />
+        
+        
+        
+        <!-- Sub Menu -->
+        <menuitem name="Sub Menu"
+            id="menu_action_sub_menu"
+            parent="app_name.menu_action_menu"
+            sequence="101" />
+        
+        
+        
+        <!-- Child of Sub Menu -->
+        <menuitem name="Child of Sub Menu"
+            id="menu_action_sub_menu_child"
+            action="action_my_model_name_view"
+            parent="app_name.menu_action_sub_menu"
+            sequence="1001" />
+        
+    </data>
+</odoo>

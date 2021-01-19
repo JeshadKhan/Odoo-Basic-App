@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Search View -->
+        <record id="my_model_name_search_view" model="ir.ui.view">
+            <field name="name">my.model.name.search.view</field>
+            <field name="model">my.model.name</field>
+            <field name="arch" type="xml">
+                <search string="My Model Names">
+                    <field name="name" string="Name" filter_domain="[('name','ilike',self)]"/>
+                    <field name="code" string="Code" filter_domain="[('code','ilike',self)]"/>
+                    <field name="company_id" string="Company" filter_domain="[('company_id','ilike',self)]"/>
+                </search>
+            </field>
+        </record>
+
+
+        <!-- Kanban View -->
+        <record id="my_model_name_kanban_view" model="ir.ui.view">
+            <field name="name">my.model.name.kanban</field>
+            <field name="model">my.model.name</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban" string="My Model Names">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="photo"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_content oe_kanban_global_click o_kanban_record_has_image_fill">
+                                <!-- Employee's Photo -->
+                                <div class="o_kanban_image_fill_left d-none d-md-block" t-attf-style="background-image: url(#{kanban_image('my.model.name', 'photo', record.id.raw_value)})" role="img"/>
+                                <!-- Employee's Photo for Mobile -->
+                                <div class="o_kanban_image d-md-none rounded-circle" t-attf-style="background-image: url(#{kanban_image('my.model.name', 'photo', record.id.raw_value)})" role="img"/>
+
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </strong>
+                                    <ul>
+                                        <li><field name="code"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <!-- Tree View -->
+        <record id="my_model_name_tree_view" model="ir.ui.view">
+            <field name="name">my.model.name.tree.view</field>
+            <field name="model">my.model.name</field>
+            <field name="priority" eval="7" />
+            <field name="arch" type="xml">
+                <tree string="My Model Names">
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- Form View -->
+        <record id="my_model_name_form_view" model="ir.ui.view">
+            <field name="name">my.model.name.form.view</field>
+            <field name="model">my.model.name</field>
+            <field name="priority" eval="7"/>
+            <field name="arch" type="xml">
+                <form string="Model Name">
+                    <header>
+                        <field name="active" invisible="1"/>
+                        <button type="object"
+                            class="oe_highlight"
+                            string="Update Data"
+                            name="action_update_data_wizard"
+                            attrs="{'visible': [('active','=',True)]}"/>
+                    </header>
+                    <sheet>
+                        <h3>
+                            <label for="name" string="Name"/><br/>
+                            <field name="name"/>
+                        </h3>
+                        <group name="section_name" string="Section Name">
+                            <group>
+                                <field name="code"/>
+                            </group>
+                            <group>
+                                <field name="photo" widget="image" class="oe_avatar oe_right" nolabel="1"/>
+                            </group>
+                        </group>
+                        <group name="section_name_2" string="Section Name 2" col="4">
+                            <field name="amount" widget="monetary"/>
+                            <field name="year"/>
+                            <field name="is_blood_donar"/>
+                            <field name="blood_group" attrs="{'invisible': [('is_blood_donar','!=',True)]}"/>
+                            <field name="birthday" attrs="{'invisible': [('is_blood_donar','!=',True)]}"/>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>
+                        <group name="section_name_3" string="Section Name 3">
+                            <field name="my_model_name_line_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="name" required="True"/>
+                                    <field name="amount"/>
+                                    <field name="company_id" options="{'no_quick_create':True, 'no_create_edit':True}"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Action -->
+        <record id="action_my_model_name_view" model="ir.actions.act_window">
+            <field name="name">My Model Name</field>
+            <field name="res_model">my.model.name</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref="my_model_name_kanban_view"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create o_view_nocontent_smiling_face">
+                    Add a new record.
+                </p>
+            </field>
+        </record>
+        
+    </data>
+</odoo>
