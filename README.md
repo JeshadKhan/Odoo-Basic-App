@@ -5,9 +5,7 @@ Programming languages: Python, JavaScript, XML.
 
 
 # Odoo Basic App
-Basic app of Odoo. It is a basic app architecture.
-
-Version: 11.0, 12.0, 13.0.
+Basic app of Odoo. It is a basic app architecture with a simple operation.
 
 
 # App Structure
