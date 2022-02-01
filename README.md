@@ -16,6 +16,8 @@ app_name/
 │   └── ...
 ├── data/
 │   └── ...
+├── demo/
+│   └── ...
 ├── models/
 │   ├── __init__.py
 │   └── ...
@@ -25,7 +27,7 @@ app_name/
 │   └── ...
 ├── static/
 │   ├── description
-│       └── ...
+│   |   └── ...
 │   └── src
 │       ├── css
 │       ├── img
@@ -48,4 +50,4 @@ app_name/
 
 ------------------------------------------------------------------------------
 
-###### Note: Version wise branching availabe. You can download the app and modify as you want. It's free.
+###### Note: Version wise branch availabe. You can download and modify the app as you want. It's free.
