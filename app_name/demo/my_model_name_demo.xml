@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="my.model.name" id="demo_my_model_name_1">
+            <field name="name">Demo One</field>
+            <field name="note">Demo not for One</field>
+        </record>
+
+        <record model="my.model.name" id="demo_my_model_name_2">
+            <field name="name">Demo Two</field>
+            <field name="note">Demo not for Two</field>
+        </record>
+
+        <record model="my.model.name" id="demo_my_model_name_3">
+            <field name="name">Demo Three</field>
+            <field name="note">Demo not for Three</field>
+        </record>
+
+        <record model="my.model.name" id="demo_my_model_name_4">
+            <field name="name">Demo Four</field>
+            <field name="note">Demo not for Four</field>
+        </record>
+
+        <record model="my.model.name" id="demo_my_model_name_5">
+            <field name="name">Demo Five</field>
+            <field name="note">Demo not for Five</field>
+        </record>
+        
+    </data>
+</odoo>
