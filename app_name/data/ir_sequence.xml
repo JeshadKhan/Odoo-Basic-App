@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- My Model Name -->
+        <record model="ir.sequence" id="my_model_name_code_sequence">
+            <field name="name">My Model Name</field>
+            <field name="code">my.model.name</field>
+            <field name="implementation">standard</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">PREFIX</field>
+            <field name="suffix"></field>
+            <field name="padding">5</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">0</field>
+        </record>
+        
+    </data>
+</odoo>
