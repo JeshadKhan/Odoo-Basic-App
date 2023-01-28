@@ -1,0 +1,16 @@
+# build directories
+_build/
+/bin/
+/build/
+/man/
+
+# dotfiles
+!.mailmap
+*.egg-info
+*.orig
+*.bat
+*.exe
+
+# compiled python files
+*.py[co]
+__pycache__/
