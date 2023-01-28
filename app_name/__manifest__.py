@@ -38,6 +38,20 @@ Something about the App.
         ## Template
         'static/src/xml/*.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            ('include', 'app_name/static/src/css/web_assets_backend.css'),
+            ('include', 'app_name/static/src/js/web_assets_backend.js'),
+        ],
+        'web.assets_frontend': [
+            ('include', 'app_name/static/src/css/web_assets_frontend.css'),
+            ('include', 'app_name/static/src/js/web_assets_frontend.js'),
+        ],
+        'web.assets_common': [
+            ('include', 'app_name/static/src/css/web_assets_common.css'),
+            ('include', 'app_name/static/src/js/web_assets_common.js'),
+        ],
+    },
     'demo': [
         ## Demo Data
         'demo/my_model_name_demo.xml',
@@ -60,18 +74,4 @@ Something about the App.
     'contributors': [
         'Jeshad Khan <https://github.com/jeshadkhan>',
     ],
-    'assets': {
-        'web.assets_backend': [
-            ('include', 'app_name/static/src/css/web_assets_backend.css'),
-            ('include', 'app_name/static/src/js/web_assets_backend.js'),
-        ],
-        'web.assets_frontend': [
-            ('include', 'app_name/static/src/css/web_assets_frontend.css'),
-            ('include', 'app_name/static/src/js/web_assets_frontend.js'),
-        ],
-        'web.assets_common': [
-            ('include', 'app_name/static/src/css/web_assets_common.css'),
-            ('include', 'app_name/static/src/js/web_assets_common.js'),
-        ],
-    },
 }
